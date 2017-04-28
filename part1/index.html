@@ -6,16 +6,27 @@
     <!-- Normal style sheet used for layout and general formatting. -->
     <link href="styles.css" rel="stylesheet">
     <!-- jQuery library reference. Latest is always referenced from jQuery's CDN. -->
-    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <script   src="http://code.jquery.com/jquery-3.2.1.min.js"   integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="   crossorigin="anonymous"></script>
   	<script>
 		// WRITE YOUR CODE HERE
+    $(function() {
+      $('a#vprospect').on('click', function() {
+        $('#solution').load('solutions.html #vprospect');
+      });
+      $('a#vconvert').on('click', function() {
+  			$('#solution').load('solutions.html #vconvert');
+  		});
+  		$('a#vretain').on('click', function() {
+  			$('#solution').load('solutions.html #vretain');
+  		});
+    });
     </script>
 </head>
 
 <body>
 <section id="container">
     <header></header>
-    
+
     <nav>
         <ul>
             <li><a href="index.html">Home</a></li>
@@ -25,17 +36,17 @@
             <li><a href="contactus.html">Contact Us</a></li>
         </ul>
     </nav>
-    
+
     <section id="content">
         <h2>Our Solutions</h2>
         <p>Which Vecta Corp. solution are you interested in learning about?</p>
-		<a id="vprospect" href="#">vProspect 2.0</a> | 
-        <a id="vconvert" href="#">vConvert 2.0</a> | 
+		<a id="vprospect" href="#">vProspect 2.0</a> |
+        <a id="vconvert" href="#">vConvert 2.0</a> |
         <a id="vretain" href="#">vRetain 1.0</a>
         <br>
 		<div id="solution"></div>
     </section>
-    
+
     <footer></footer>
 </section>
 </body>

@@ -9,6 +9,17 @@
     <script src="http://code.jquery.com/jquery-latest.min.js"></script>
 	<script>
 		// WRITE YOUR CODE HERE
+      $(function() {
+        $.get('team.xml', function(data) {
+          $(data).find('management').children().each(function() {
+            $('#team').append(
+             '<strong>'+ $(this).find('name').text() +'</strong>'+ '<br>'+ '<em>' +
+              $(this).find('title').text() + '</em>' + '<br>'+ 
+              $(this).find('bio').text() + '<br><br>'
+            );
+          });
+        });
+      });
     </script>
 </head>
 

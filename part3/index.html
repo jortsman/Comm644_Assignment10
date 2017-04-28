@@ -9,6 +9,15 @@
     <script src="http://code.jquery.com/jquery-latest.min.js"></script>
 	<script>
 		// WRITE YOUR CODE HERE
+      $(function() {
+        $.getJSON('json.js', function(data){
+          $.each(data, function() {
+            $.each(this, function(key, value) {
+              $('div#result').append(value.name + '<br>' + value.title + '<br>' + value.bio + '<br><br>');
+            });
+          });
+        });
+      });
     </script>
 </head>
 
